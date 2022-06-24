@@ -17,21 +17,21 @@ namespace boatRental
         AboutBox1 aboutBox = new AboutBox1();
         public Form1()
         {
-            //Thread t = new Thread(new ThreadStart(startSplashscreen));
-            //t.Start();
-            //Thread.Sleep(5000);
+            Thread t = new Thread(new ThreadStart(startSplashscreen));
+            t.Start();
+            Thread.Sleep(5000);
             InitializeComponent();
-            //t.Abort();
+            t.Abort();
 
             dbBoats = new List<Boat>();
             dbRents = new List<Rent>();
-            //con = new MySqlConnection("Server=localhost;Database=boat_rental;user=stenden;Pwd=stenden;SslMode=none");
-            //cmd = new MySqlCommand();
-            //cmd.Connection = con;
+            con = new MySqlConnection("Server=localhost;Database=boat_rental;user=stenden;Pwd=stenden;SslMode=none");
+            cmd = new MySqlCommand();
+            cmd.Connection = con;
 
-            //this.getAllBoats();
-            //this.showBoats();
-            //this.getAllRents();
+            this.getAllBoats();
+            this.showBoats();
+            this.getAllRents();
         }
 
         public void startSplashscreen()
