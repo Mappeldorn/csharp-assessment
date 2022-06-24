@@ -31,13 +31,7 @@ In this section the in- and output of the application will be described.
 |Case|Type|Conditions|function/method | additional info|
 |-----|----|----------|----------------|----------------|
 |name|`string`|not empty|constructor|name of the boat rental|
-|rentBoat|`list<rentDay>`||setter|list of days where boats are rented|
-
-###### Rent day
-|Case|Type|Conditions|function/method | additional info|
-|-----|----|----------|----------------|----------------|
-|day|`date`|valid date|constructor, setter|day of rent|
-|rentedBoat|`list<rentedBoat>`||setter|list of all the rented boats|
+|rentBoat|`list<Rent>`||setter|list of days where boats are rented|
 
 ###### Boat
 |Case|Type|Conditions|function/method | additional info|
@@ -69,11 +63,6 @@ In this section the in- and output of the application will be described.
 |get number of the boats that use the most fuel per minute|`integer`|getMostConsumer()|
 |get shortest time that a boat was rented|`time`|getShortestRent()|
 
-###### Rent day
-|Case|Type|Conditions|function/method|
-|-----|----|----------|--------------|
-|get day|`day`|day()|
-|get list of boats that are being rented|`list<boat>`|boat()|
 
 ###### Boat
 |Case|Type|function/method|
@@ -97,19 +86,20 @@ In this section the in- and output of the application will be described.
 
 ## Class Diagram
 
-![image](https://cdn.discordapp.com/attachments/765178991103311873/985985021296935022/erd.png)
+![image](https://cdn.discordapp.com/attachments/765178991103311873/989853958761762896/unknown.png)
 
 ## Testplan
 
 #### rent day
-|day|rent|
-|----|----|
-|28-04-2022|[rent1, rent2, rent3]|
-|29-04-2022|[rent4, rent5, rent6]|
+|boat|start|end|used fuel|damage|
+|----|----|----|----|---|
+|1|11:00|13:00|5|no|
+|2|10:00|11:00|10|yes|
+|3|11:00|14:00|5|no|
 
-#### renting a boats
-|start|boat|
-|-----|-----|
-|08:10|boat1|
-|09:30|boat2|
-|10:00|boat3|
+### Results
+
+|total revenue|total rent time|most consumed fuel|percentage damaged boats|least used boat|
+|-----|------|-----|----|-----|
+|120 euro|5 hours|boat 2|33%|boat 2|
+
